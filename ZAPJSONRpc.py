@@ -37,7 +37,7 @@ def get_spider_status(spider_id):
 @dispatcher.add_method
 def start_zap_active_scan(**kwargs):
     try:
-        scan_id = zap.ascan.scan(kwargs['baseUrl'], scanpolicyname=kwargs['scan_policy'], inscopeonly=kwargs['in_scope_only'])
+        scan_id = zap.ascan.scan(kwargs['baseUrl'], scanpolicyname=kwargs['scan_policy'])
         return {"scan_id": scan_id, "message": "Scan Successfully Started"}
     except:
         return "ERROR: Failed to start Scan"
@@ -78,4 +78,4 @@ def application(request):
 
 
 if __name__ == "__main__":
-    run_simple('localhost', int(os.getenv("JRPC_PORT", 4000)), application)
+    run_simple('localhost', int(os.getenv("JRPC_PORT", 4000)), application, use_debugger=True)
