@@ -3,7 +3,7 @@
 ### Why?
 - I have been working on using OWASP ZAP with NodeJS E2E Testing Frameworks like Nightwatch and Puppeteer (will release code tomorrow),
 but I realized that ZAP's JavaScript API is difficult to work with (callback hell and no support for Promises, async/await)
-- Given this situation, I figured that it might be useful to create a minimalistic wrapper around ZAP that is "Action-oriented" (hence JSON-RPC). That way, key features of zap can be used withour direct access to the API
+- Given this situation, I figured that it might be useful to create a minimalistic wrapper around ZAP that is "Action-oriented" (hence JSON-RPC). That way, key features of zap can be used without direct access to the API
 - This can be extremely useful when using existing functional test automation with ZAP. You don't have to write a whole new API interaction with ZAP. Just call specific functions in this JSON-RPC service and you are off to the races!
 - This is a first-ditch attempt at a lightweight and minimalistic JSON-RPC Service for OWASP ZAP
 
